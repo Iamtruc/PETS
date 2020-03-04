@@ -26,7 +26,7 @@ func read_gates(my_circuit []Operation, param map[PartyID]uint64, my_ID PartyID)
 				dino[(opp.(AddCst)).Out] = dino[(opp.(AddCst)).In ]
 			}
 		case Reveal:
-			// Broadcast result
+			dino[(opp.(Reveal)).Out] = dino[(opp.(Reveal)).In ]
 		}
 	}
 }

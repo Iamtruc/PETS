@@ -14,7 +14,7 @@ func generatebeaver(nbparty,myrange int) (int, []int){
 	}
 
 	for _,i := range(a){
-		c += i
+		c *= i
 	}
 	return c,a
 }

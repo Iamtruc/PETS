@@ -1,22 +1,32 @@
 package main
 
 import (
-
+	"math/rand"
 )
 
-func read_circuit(my_circuit []*TestCircuit){
-	for _, test := range my_circuit{
-		my_peers := test.Peers
-		// Do Beaver stuff, at the end of the Beaver stuff, you need to have param map[PartyID]uint64, my_ID GateID
-		my_param := test.Inputs
-		// We need new parameters
-		circuit := test.Circuit
-		for i :=0 ; i< len(my_peers); i++{
-			var best_param map[PartyID]uint64
-			var my_ID PartyID // How do we find the right PartyID ?
-			read_gates(circuit, best_param,my_ID)
+func read_circuit(my_circuit *TestCircuit){
+	//Peerlist := my_circuit.Peers
+	Inputlist := my_circuit.Inputs
+	study_circuit := my_circuit.Circuit
+	//Solution := my_circuit.ExpOutput
+	var easy_input map[PartyID]uint64
+	for i,j := range Inputlist{
+		for _,secret := range j {
+			easy_input[i] = secret
 		}
 	}
+	read_gates(study_circuit, easy_input, 0)
+}
 
+func separateInShares(nbparty, a int) []int{
 
+	var shares []int
+
+	for i := 0;i<nbparty;i++{
+		var e = rand.Intn(a+1)
+		shares=append(shares, e)
+		a=a-e
+	}
+
+	return shares
 }
