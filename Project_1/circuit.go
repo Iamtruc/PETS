@@ -4,7 +4,7 @@ import (
 	"math/rand"
 )
 
-func Circuit_protocol()
+//func Circuit_protocol()
 
 func read_circuit(my_circuit *TestCircuit,my_ID PartyID ){
 	//Peerlist := my_circuit.Peers

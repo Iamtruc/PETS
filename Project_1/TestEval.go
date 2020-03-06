@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestEval(t *testing.T){
+func TestEval (t *testing.T){
 	/// A test where we get three peers to communicate.
 	for _,smart_circuit := range TestCircuits {
 		peers := smart_circuit.Peers
