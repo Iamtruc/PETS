@@ -6,10 +6,10 @@ import(
 
 // We have n is the number of parties that are communicating, and l is the modulus of the nb
 
-func generatebeaver(nbparty,myrange int) (int, []int){
+func generatebeaver(myrange int) (int, []int){
 	var a []int
 	var c int
-	for i := 0;i<nbparty;i++{
+	for i := 0;i<2;i++{
 		a = append(a, rand.Intn(myrange))
 	}
 

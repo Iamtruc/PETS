@@ -4,7 +4,9 @@ import (
 	"math/rand"
 )
 
-func read_circuit(my_circuit *TestCircuit){
+func Circuit_protocol()
+
+func read_circuit(my_circuit *TestCircuit,my_ID PartyID ){
 	//Peerlist := my_circuit.Peers
 	Inputlist := my_circuit.Inputs
 	study_circuit := my_circuit.Circuit
@@ -15,7 +17,7 @@ func read_circuit(my_circuit *TestCircuit){
 			easy_input[i] = secret
 		}
 	}
-	read_gates(study_circuit, easy_input, 0)
+	read_gates(study_circuit, easy_input, my_ID)
 }
 
 func separateInShares(nbparty, a int) []int{
