@@ -9,11 +9,12 @@ import (
 
 
 // executes test circuit using operations detailed in operations.go
-func main() {
+func main() {// We get the argument that we put in the command line
 	prog := os.Args[0]
+	fmt.Println(prog)
 	// os.Args provides access to raw command-line arguments. Note that the first value in this slice is the path to the program, and os.Args[1:] holds the arguments to the program.
 	args := os.Args[1:]
-
+	fmt.Println(args)
 	// If there are less then two arguments => panic
 	if len(args) < 2 {
 		fmt.Println("Usage:", prog, "[Party ID] [Input]")
